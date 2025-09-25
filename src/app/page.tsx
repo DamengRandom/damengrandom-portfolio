@@ -49,14 +49,14 @@ const skills = [
 const knowledgePoints = [
   { title: 'System Design Notes', icon: '📘', description: 'System design concepts and patterns', link: 'https://github.com/DamengRandom/system-design-notes' },
   { title: 'Random Notes', icon: '🧠', description: 'Bits of knowledge from various areas', link: 'https://github.com/DamengRandom/random-notes' },
-  { title: 'React Tricks 2025', icon: '⚛️', description: 'Quick React tips and reminders', link: 'https://github.com/DamengRandom/react-tricks-2025' },
-  { title: 'Next.js Notes', icon: '💻', description: 'Early notes on using Next.js', link: 'https://github.com/DamengRandom/nextjs-notes' },
-  { title: 'TypeScript Recall', icon: '📝', description: 'Notes for brushing up before interviews', link: 'https://github.com/DamengRandom/typescript-recall' },
-  { title: 'Coding Patterns', icon: '🧩', description: 'Best practices and design patterns', link: 'https://github.com/DamengRandom/coding-patterns' },
-  { title: 'SOLID Principles', icon: '📐', description: 'Refactoring and design thinking', link: 'https://github.com/DamengRandom/solid-principles' },
-  { title: 'Kubernetes CKAD Notes', icon: '☸️', description: 'Hands-on Kubernetes config & commands', link: 'https://github.com/DamengRandom/kubernetes-ckad-notes' },
-  { title: 'Jenkins Recall', icon: '🛠️', description: 'Jenkins basics and automation workflows', link: 'https://github.com/DamengRandom/jenkins-recall' },
-  { title: 'Git Cherry Pick Notes', icon: '🔀', description: 'Useful Git tips and recalls', link: 'https://github.com/DamengRandom/git-cherry-pick-notes' }
+  { title: 'React Tricks 2025', icon: '⚛️', description: 'Quick React tips and reminders', link: 'https://github.com/DamengRandom/react-tricks-recalls-2025' },
+  { title: 'Next.js Notes', icon: '💻', description: 'Early notes on using Next.js', link: 'https://github.com/DamengRandom/nextjs-recalls/blob/master/general-notes.md' },
+  { title: 'TypeScript Recall', icon: '📝', description: 'Notes for brushing up before interviews', link: 'https://github.com/DamengRandom/ts-2025-recalls' },
+  { title: 'Coding Patterns', icon: '🧩', description: 'Best practices and design patterns', link: 'https://github.com/DamengRandom/code-patterns-recall-2025' },
+  { title: 'SOLID Principles', icon: '📐', description: 'Refactoring and design thinking', link: 'https://github.com/DamengRandom/solid-principle-recalls' },
+  { title: 'Kubernetes CKAD Notes', icon: '☸️', description: 'Hands-on Kubernetes config & commands', link: 'https://github.com/DamengRandom/ckad-try-2025' },
+  { title: 'Jenkins Recall', icon: '🛠️', description: 'Jenkins basics and automation workflows', link: 'https://github.com/DamengRandom/damon-jenkins-recall-2024' },
+  { title: 'Git Cherry Pick Notes', icon: '🔀', description: 'Useful Git tips and recalls', link: 'https://github.com/DamengRandom/cherry-pick-recall' }
 ]
 
 export default function Home() {
@@ -117,7 +117,7 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => window.open('mailto:damon.wu.au@gmail.com', '_blank')}
+                onClick={() => window.open('mailto:damonwu0605@gmail.com', '_blank')}
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Contact
@@ -329,7 +329,7 @@ export default function Home() {
                 variant="ghost" 
                 size="sm" 
                 className="text-white hover:text-blue-400"
-                onClick={() => window.open('https://linkedin.com/in/damon-wu', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/damon-wu-aab280107/', '_blank')}
               >
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
@@ -338,7 +338,7 @@ export default function Home() {
                 variant="ghost" 
                 size="sm" 
                 className="text-white hover:text-blue-400"
-                onClick={() => window.open('mailto:damon.wu.au@gmail.com', '_blank')}
+                onClick={() => window.open('mailto:damonwu0605@gmail.com', '_blank')}
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Email
