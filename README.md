@@ -1,9 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DamenGRandom - Portfolio Site
 
-## Getting Started
+Welcome to my personal portfolio website! This is a modern, responsive web application showcasing my work, skills, and experience as a developer.
 
-First, run the development server:
+## 🚀 Technologies Used
 
+### Frontend Framework
+- **[Next.js 15.5.4](https://nextjs.org)** - React framework with App Router
+- **[React 19.1.0](https://reactjs.org)** - Latest React with concurrent features
+- **[TypeScript 5](https://www.typescriptlang.org)** - Type-safe JavaScript
+
+### Styling & UI
+- **[Tailwind CSS 4](https://tailwindcss.com)** - Utility-first CSS framework
+- **[Radix UI](https://www.radix-ui.com)** - Unstyled, accessible UI components
+  - Avatar, Hover Card, Scroll Area, Separator, Slot, Tabs, Tooltip
+- **[Lucide React](https://lucide.dev)** - Beautiful & consistent icon library
+- **[React Icons](https://react-icons.github.io/react-icons/)** - Popular icon library with brand icons
+- **[Framer Motion](https://www.framer.com/motion/)** - Production-ready motion library
+
+### Development Tools
+- **[ESLint 9](https://eslint.org)** - Code linting and formatting
+- **[PostCSS](https://postcss.org)** - CSS processing
+- **Class Variance Authority** - Type-safe component variants
+- **clsx & Tailwind Merge** - Conditional CSS class utilities
+
+### Deployment & CI/CD
+- **[Vercel](https://vercel.com)** - Deployment platform
+- **GitHub Actions** - Automated CI/CD pipeline
+- **Turbopack** - Fast bundler for development
+
+## ✨ Features
+
+- 🎨 **Modern Design** - Clean, professional interface
+- 📱 **Responsive Layout** - Optimized for all devices
+- ⚡ **Performance Optimized** - Fast loading with Next.js optimizations
+- 🎭 **Smooth Animations** - Engaging user experience with Framer Motion
+- 🔧 **Technology Slider** - Interactive showcase of technical skills
+- 📊 **Visit Counter** - Track site engagement
+- 🌐 **SEO Optimized** - Built-in Next.js SEO features
+- ♿ **Accessible** - WCAG compliant with Radix UI components
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js 18.x or 20.x
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd damengrandom
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
@@ -14,23 +73,56 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
 
-## Learn More
+## 🚀 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is configured for automatic deployment to Vercel with GitHub Actions CI/CD pipeline.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Manual Deployment
+```bash
+# Deploy to preview
+vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Deploy to production
+vercel --prod
+```
 
-## Deploy on Vercel
+For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/         # React components
+│   ├── TechSlider.tsx  # Technology showcase slider
+│   ├── VisitCounter.tsx # Site visit tracking
+│   └── ui/             # Reusable UI components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── ...
+```
+
+## 🤝 Contributing
+
+This is a personal portfolio project, but feedback and suggestions are always welcome!
+
+## 📄 License
+
+This project is private and proprietary.
+
+---
+
+Built with ❤️ using Next.js and modern web technologies.
