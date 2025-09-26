@@ -105,7 +105,7 @@ export default function RootLayout({
               "image": "https://damengrandom.vercel.app/og-image.jpg",
               "sameAs": [
                 "https://github.com/DamengRandom",
-                "https://linkedin.com/in/damon-wu"
+                "https://www.linkedin.com/in/damon-wu-aab280107/"
               ],
               "jobTitle": "Frontend Developer",
               "worksFor": {
