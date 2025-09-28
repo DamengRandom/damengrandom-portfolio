@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import { CompactVisitCounter } from '@/components/VisitCounter'
 import TechSlider from '@/components/TechSlider'
+import EnvelopeProfile from '@/components/EnvelopeProfile'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -72,11 +73,8 @@ export default function Home() {
           animate="animate"
         >
           <div className="text-center">
-            <motion.div variants={fadeInUp} className="mb-8">
-              <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-blue-500/20 shadow-2xl">
-                <AvatarImage src="/api/placeholder/128/128" alt="DamengRandom" />
-                <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-blue-500 to-purple-600 text-white">DW</AvatarFallback>
-              </Avatar>
+            <motion.div variants={fadeInUp} className="mb-16">
+              <EnvelopeProfile />
             </motion.div>
             
             <motion.div variants={fadeInUp} className="space-y-4">
@@ -91,7 +89,7 @@ export default function Home() {
               </h1>
               
               <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                A passionate <span className="font-semibold text-blue-600">frontend developer</span> from Sydney
+                A passionate <span className="font-semibold text-blue-600">JavaScript Engineer</span> from Sydney
               </p>
               
               <div className="flex items-center justify-center gap-2 text-slate-500 mb-3">
@@ -347,7 +345,7 @@ export default function Home() {
             
             <Separator className="my-6 bg-slate-700" />
             <p className="text-slate-400">
-              © 2025 DamengRandom. Built with Next.js, TypeScript & shadcn/ui (This is an AI generate site Thx for TRAE 🚀, thanks for visiting the site ❤️)
+              © 2025 DamengRandom. Built with Next.js, TypeScript & shadcn/ui (Thanks for visiting the site ❤️)
             </p>
           </div>
         </div>

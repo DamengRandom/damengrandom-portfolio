@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DamengRandom - Frontend Developer & AI Enthusiast | Portfolio",
-  description: "Passionate frontend developer from Sydney specializing in React, Vue.js, Next.js, and AI technologies. Explore my portfolio showcasing modern web development projects and technical expertise.",
+  title: "DamengRandom - JavaScript Engineer & AI Enthusiast | Portfolio",
+  description: "Passionate JavaScript Engineer from Sydney specializing in React, Vue.js, Next.js, and AI technologies. Explore my portfolio showcasing modern web development projects and technical expertise.",
   keywords: [
     "DamengRandom",
-    "Frontend Developer",
+    "JavaScript Engineer",
     "React Developer",
     "Vue.js Developer", 
     "Next.js",
@@ -50,22 +50,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://damengrandom.vercel.app",
-    title: "DamengRandom - Frontend Developer & AI Enthusiast",
-    description: "Passionate frontend developer from Sydney specializing in React, Vue.js, Next.js, and AI technologies.",
+    title: "DamengRandom - JavaScript Engineer & AI Enthusiast",
+    description: "Passionate JavaScript Engineer from Sydney specializing in React, Vue.js, Next.js, and AI technologies.",
     siteName: "DamengRandom Portfolio",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DamengRandom - Frontend Developer Portfolio",
+        alt: "DamengRandom - JavaScript Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DamengRandom - Frontend Developer & AI Enthusiast",
-    description: "Passionate frontend developer from Sydney specializing in React, Vue.js, Next.js, and AI technologies.",
+    title: "DamengRandom - JavaScript Engineer & AI Enthusiast",
+    description: "Passionate JavaScript Engineer from Sydney specializing in React, Vue.js, Next.js, and AI technologies.",
     images: ["/og-image.jpg"],
     creator: "@DamengRandom",
   },
@@ -100,14 +100,14 @@ export default function RootLayout({
               "@type": "Person",
               "name": "DamengRandom",
               "alternateName": "DamengRandom",
-              "description": "Passionate frontend developer from Sydney specializing in React, Vue.js, Next.js, and AI technologies",
+              "description": "Passionate JavaScript Engineer from Sydney specializing in React, Vue.js, Next.js, and AI technologies",
               "url": "https://damengrandom.vercel.app",
               "image": "https://damengrandom.vercel.app/og-image.jpg",
               "sameAs": [
                 "https://github.com/DamengRandom",
                 "https://www.linkedin.com/in/damon-wu-aab280107/"
               ],
-              "jobTitle": "Frontend Developer",
+              "jobTitle": "JavaScript Engineer",
               "worksFor": {
                 "@type": "Organization",
                 "name": "Freelance"
