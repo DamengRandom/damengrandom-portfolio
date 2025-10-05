@@ -54,6 +54,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    
+    - name: Validate Vercel secrets
+      run: |
+        if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then echo "Missing secret: VERCEL_TOKEN"; exit 1; fi
+        if [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then echo "Missing secret: VERCEL_ORG_ID"; exit 1; fi
+        if [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then echo "Missing secret: VERCEL_PROJECT_ID"; exit 1; fi
       
     - name: Deploy to Vercel (Preview)
       uses: amondnet/vercel-action@v25
@@ -71,6 +77,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    
+    - name: Validate Vercel secrets
+      run: |
+        if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then echo "Missing secret: VERCEL_TOKEN"; exit 1; fi
+        if [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then echo "Missing secret: VERCEL_ORG_ID"; exit 1; fi
+        if [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then echo "Missing secret: VERCEL_PROJECT_ID"; exit 1; fi
       
     - name: Deploy to Vercel (Production)
       uses: amondnet/vercel-action@v25
