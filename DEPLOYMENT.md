@@ -33,6 +33,12 @@ Add the following secrets to your GitHub repository:
   - Found in your Vercel project settings
   - Or run `vercel project ls` in your terminal
 
+### 2.1 Repository Variables
+
+Add the following repository variable (Settings → Secrets and variables → Actions → Variables):
+
+- **PRODUCTION_URL**: The public production URL of your site, for example `https://yourdomain.com` or `https://your-project.vercel.app`. This is used by the CI workflow to run a post-deploy health check.
+
 ### 3. Workflow Triggers
 
 The CI/CD pipeline will automatically run on:
@@ -55,6 +61,11 @@ The CI/CD pipeline will automatically run on:
 
 3. **Deploy Production** (for master branch):
    - Deploys to production on Vercel
+
+4. **Post-Deploy Health Check** (production only):
+   - Performs an HTTP check against `PRODUCTION_URL` with retries
+   - Considers status codes 200/301/302 as healthy
+   - Fails the workflow if the site is unreachable or returns an error after multiple attempts
 
 ### 5. Getting Your Vercel IDs
 
@@ -91,6 +102,7 @@ vercel --prod
 ## Troubleshooting
 
 - Ensure all secrets are correctly set in GitHub
+- Ensure `PRODUCTION_URL` is configured as a repository variable if you want the post-deploy health check to run
 - Check that your Vercel token has the necessary permissions
 - Verify your project is properly linked to the GitHub repository
 - Check the Actions tab in GitHub for detailed error logs
