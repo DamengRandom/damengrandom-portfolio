@@ -1,5 +1,16 @@
 import { useRef, useEffect } from 'react';
 
+type LetterGlitchProps = {
+  glitchColors?: string[];
+  glitchSpeed?: number;
+  centerVignette?: boolean;
+  outerVignette?: boolean;
+  smooth?: boolean;
+  characters?: string;
+  useGradient?: boolean;
+  gradientStops?: string[];
+};
+
 const LetterGlitch = ({
   glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
   glitchSpeed = 50,
@@ -9,16 +20,7 @@ const LetterGlitch = ({
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789',
   useGradient = false,
   gradientStops = ['#60a5fa', '#a855f7', '#ec4899'] // blue → purple → pink
-}: {
-  glitchColors: string[];
-  glitchSpeed: number;
-  centerVignette: boolean;
-  outerVignette: boolean;
-  smooth: boolean;
-  characters: string;
-  useGradient?: boolean;
-  gradientStops?: string[];
-}) => {
+}: LetterGlitchProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const letters = useRef<
