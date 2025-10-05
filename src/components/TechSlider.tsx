@@ -19,6 +19,7 @@ import {
   SiRedis, 
   SiTailwindcss 
 } from 'react-icons/si'
+import GradientText from '@/components/GradientText'
 
 const technologies = [
   { name: 'React', icon: SiReact, color: 'text-[#61DAFB]' },
@@ -78,9 +79,12 @@ export default function TechSlider() {
   return (
     <div className="w-full overflow-hidden bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-8">
       <div className="mb-6 text-center">
-        <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-2">
-          Technologies I Work With
-        </h3>
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <span className="text-4xl">🎲</span>
+          <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
+            Technologies I Work With
+          </GradientText>
+        </div>
         <p className="text-slate-600 dark:text-slate-400">
           Constantly learning and exploring new tools
         </p>

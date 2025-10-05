@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import TiltedCard from '@/components/TiltedCard'
 import { Separator } from '@/components/ui/separator'
 import { 
   Github, 
@@ -17,34 +17,22 @@ import {
   ExternalLink,
   Zap,
   Coffee,
-  Globe
+  Globe,
+  BookOpen
 } from 'lucide-react'
-import { CompactVisitCounter } from '@/components/VisitCounter'
 import TechSlider from '@/components/TechSlider'
-import EnvelopeProfile from '@/components/EnvelopeProfile'
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-}
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+import LetterGlitch from '@/components/LetterGlitch';
+import GradientText from '@/components/GradientText';
+import CardSwap from '@/components/CardSwap';
 
 const skills = [
   { name: 'React', level: 95, color: 'bg-blue-500' },
-  { name: 'Vue.js', level: 90, color: 'bg-green-500' },
-  { name: 'Next.js', level: 85, color: 'bg-black' },
-  { name: 'TypeScript', level: 88, color: 'bg-blue-600' },
-  { name: 'GraphQL', level: 75, color: 'bg-pink-500' },
-  { name: 'Kubernetes', level: 70, color: 'bg-blue-400' },
-  { name: 'AI/ML', level: 65, color: 'bg-purple-500' }
+  { name: 'Vue.js', level: 80, color: 'bg-green-500' },
+  { name: 'Next.js', level: 60, color: 'bg-black' },
+  { name: 'TypeScript', level: 90, color: 'bg-blue-600' },
+  { name: 'GraphQL', level: 55, color: 'bg-pink-500' },
+  { name: 'Kubernetes', level: 60, color: 'bg-blue-400' },
+  { name: 'AI/ML', level: 40, color: 'bg-purple-500' }
 ]
 
 const knowledgePoints = [
@@ -63,66 +51,31 @@ const knowledgePoints = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-teal-600/10" />
-        <motion.div 
-          className="relative max-w-7xl mx-auto"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-        >
-          <div className="text-center">
-            <motion.div variants={fadeInUp} className="mb-16">
-              <EnvelopeProfile />
-            </motion.div>
-            
-            <motion.div variants={fadeInUp} className="space-y-4">
-              <div className="flex justify-center gap-2 mb-4">
-                 <Badge variant="secondary" className="px-3 py-1">G&apos;day 🤗</Badge>
-                 <Badge variant="secondary" className="px-3 py-1">Aloha 🍻</Badge>
-                 <Badge variant="secondary" className="px-3 py-1">Hello 👋</Badge>
-               </div>
-              
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent leading-tight">
-                DamengRandom
-              </h1>
-              
-              <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                A passionate <span className="font-semibold text-blue-600">JavaScript Engineer</span> from Sydney
-              </p>
-              
-              <div className="flex items-center justify-center gap-2 text-slate-500 mb-3">
-                <MapPin className="w-4 h-4" />
-                <span>Australia</span>
-              </div>
-              
-              {/* Compact Visit Counter */}
-              <div className="flex justify-center">
-                <CompactVisitCounter />
-              </div>
-            </motion.div>
+      {/* Hero with LetterGlitch background + overlay texts */}
+      <section className="relative overflow-hidden min-h-screen py-0 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <LetterGlitch
+            glitchSpeed={50}
+            centerVignette
+            outerVignette={false}
+            smooth
+            useGradient
+            gradientStops={["#60a5fa", "#a855f7", "#ec4899"]}
+          />
+        </div>
 
-            <motion.div variants={fadeInUp} className="mt-8 flex justify-center gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                onClick={() => window.open('https://github.com/DamengRandom', '_blank')}
-              >
-                <Github className="w-4 h-4 mr-2" />
-                GitHub
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => window.open('mailto:damonwu0605@gmail.com', '_blank')}
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                Contact
-              </Button>
-            </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto min-h-screen flex flex-col items-center justify-center text-center gap-3">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+            DamengRandom
+          </h1>
+          <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            A passionate <span className="font-semibold text-white">JavaScript Engineer</span> from Sydney
+          </p>
+          <div className="flex items-center justify-center gap-2 text-white/70 leading-none">
+            <MapPin className="w-4 h-4" />
+            <span>Australia</span>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* About Section */}
@@ -135,7 +88,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">About Me</h2>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="text-4xl">🥐</span>
+              <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
+                About Me
+              </GradientText>
+            </div>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
               Welcome to damengrandom repository - my personal portfolio showcasing my journey as a developer
             </p>
@@ -155,17 +113,28 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white">
-                      {item.icon}
+                <TiltedCard
+                  imageSrc="/card-plane.svg"
+                  altText={item.title}
+                  captionText={item.title}
+                  containerHeight="220px"
+                  imageHeight="220px"
+                  imageWidth="100%"
+                  scaleOnHover={1.02}
+                  rotateAmplitude={6}
+                  showMobileWarning={false}
+                  showTooltip={false}
+                  displayOverlayContent
+                  overlayContent={(
+                    <div className="h-full w-full flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/80 p-6 shadow-md hover:shadow-lg transition-shadow">
+                      <div className="w-12 h-12 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white">
+                        {item.icon}
+                      </div>
+                      <div className="leading-none font-semibold text-lg text-slate-800 dark:text-slate-100">{item.title}</div>
+                      <p className="text-center text-slate-600 dark:text-slate-300 text-sm">{item.desc}</p>
                     </div>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-center text-slate-600 dark:text-slate-300">{item.desc}</p>
-                  </CardContent>
-                </Card>
+                  )}
+                />
               </motion.div>
             ))}
           </div>
@@ -185,7 +154,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">🛠️ Skills & Technologies</h2>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="text-4xl">🛠️</span>
+              <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
+                Skills & Technologies
+              </GradientText>
+            </div>
             <p className="text-xl text-slate-600 dark:text-slate-300">
               Technologies I work with and continuously improve
             </p>
@@ -231,7 +205,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">📊 Knowledge Collection</h2>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="text-4xl">📚</span>
+              <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
+                Knowledge Collection
+              </GradientText>
+            </div>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
               Personal note collections I keep updating and revisiting for continuous learning
             </p>
@@ -283,25 +262,49 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 shadow-xl">
-              <CardHeader>
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Zap className="w-6 h-6 text-yellow-500" />
-                  <CardTitle className="text-2xl">Current Status</CardTitle>
+            <CardSwap
+              hoverToSwap
+              autoplay
+              intervalMs={2800}
+              front={
+                <div className="p-8 h-full">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <Zap className="w-6 h-6 text-yellow-500" />
+                    <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
+                      Current Status
+                    </GradientText>
+                  </div>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+                    🚀 Doing an AI project at the moment, will keep updated ~
+                  </p>
+                  <div className="flex items-center justify-center gap-4">
+                    <Badge variant="secondary" className="px-4 py-2">
+                      <Globe className="w-4 h-4 mr-2" />
+                      Discord: mundo5568
+                    </Badge>
+                  </div>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  🚀 Doing an AI project at the moment, will keep updated ~
-                </p>
-                <div className="flex items-center justify-center gap-4">
-                  <Badge variant="secondary" className="px-4 py-2">
-                    <Globe className="w-4 h-4 mr-2" />
-                    Discord: mundo5568
-                  </Badge>
+              }
+              back={
+                <div className="p-8 h-full">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <Coffee className="w-6 h-6 text-pink-500" />
+                    <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
+                      Currently Building
+                    </GradientText>
+                  </div>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+                    Brewing ideas and shipping features. Ping me anytime.
+                  </p>
+                  <div className="flex items-center justify-center gap-4">
+                    <Badge variant="secondary" className="px-4 py-2">
+                      <Globe className="w-4 h-4 mr-2" />
+                      Email: damonwu0605@gmail.com
+                    </Badge>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              }
+            />
           </motion.div>
         </div>
       </section>
