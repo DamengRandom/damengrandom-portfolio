@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import TiltedCard from '@/components/TiltedCard'
@@ -15,15 +14,11 @@ import {
   Brain, 
   Heart,
   ExternalLink,
-  Zap,
   Coffee,
-  Globe,
-  BookOpen
 } from 'lucide-react'
 import TechSlider from '@/components/TechSlider'
 import LetterGlitch from '@/components/LetterGlitch';
 import GradientText from '@/components/GradientText';
-import CardSwap from '@/components/CardSwap';
 
 const skills = [
   { name: 'React', level: 95, color: 'bg-blue-500' },
@@ -255,56 +250,22 @@ export default function Home() {
 
       {/* Current Status */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="flex items-center justify-center"
           >
-            <CardSwap
-              hoverToSwap
-              autoplay
-              intervalMs={2800}
-              front={
-                <div className="p-8 h-full">
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <Zap className="w-6 h-6 text-yellow-500" />
-                    <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
-                      Current Status
-                    </GradientText>
-                  </div>
-                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                    🚀 Doing an AI project at the moment, will keep updated ~
-                  </p>
-                  <div className="flex items-center justify-center gap-4">
-                    <Badge variant="secondary" className="px-4 py-2">
-                      <Globe className="w-4 h-4 mr-2" />
-                      Discord: mundo5568
-                    </Badge>
-                  </div>
-                </div>
-              }
-              back={
-                <div className="p-8 h-full">
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <Coffee className="w-6 h-6 text-pink-500" />
-                    <GradientText className="text-4xl font-bold leading-tight" colors={["#60a5fa", "#a855f7", "#ec4899"]} animationSpeed={10}>
-                      Currently Building
-                    </GradientText>
-                  </div>
-                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                    Brewing ideas and shipping features. Ping me anytime.
-                  </p>
-                  <div className="flex items-center justify-center gap-4">
-                    <Badge variant="secondary" className="px-4 py-2">
-                      <Globe className="w-4 h-4 mr-2" />
-                      Email: damonwu0605@gmail.com
-                    </Badge>
-                  </div>
-                </div>
-              }
-            />
+            <GradientText 
+              colors={["#60a5fa", "#a855f7", "#ec4899"]}
+              animationSpeed={10}
+              showBorder={false}
+              className="custom-class text-5xl sm:text-6xl md:text-7xl font-bold leading-tight"
+            >
+              花有重开日 人无再少年
+            </GradientText>
           </motion.div>
         </div>
       </section>
